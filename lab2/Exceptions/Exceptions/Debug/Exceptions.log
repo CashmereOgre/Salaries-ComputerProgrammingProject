@@ -1,0 +1,6 @@
+﻿  main.cpp
+c:\users\wikto\desktop\programowanie\cp4\lab_02\exceptions\exceptions\main.cpp(20): warning C4244: "return": konwersja z "double" do "uint32_t", możliwa utrata danych
+c:\users\wikto\desktop\programowanie\cp4\lab_02\exceptions\exceptions\main.cpp(59): warning C4244: "argument": konwersja z "double" do "uint32_t", możliwa utrata danych
+c:\users\wikto\desktop\programowanie\cp4\lab_02\exceptions\exceptions\main.cpp(76): warning C4101: "i": lokalna zmienna, do której nie istnieje odwołanie
+c:\users\wikto\desktop\programowanie\cp4\lab_02\exceptions\exceptions\main.cpp(170): warning C4286: „std::out_of_range”: został przechwycony przez klasę bazową („std::logic_error”) w wierszu 166
+  Exceptions.vcxproj -> C:\Users\wikto\Desktop\Programowanie\CP4\Lab_02\Exceptions\Debug\Exceptions.exe
