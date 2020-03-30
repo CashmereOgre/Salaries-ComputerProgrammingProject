@@ -1,0 +1,17 @@
+﻿  main.cpp
+c:\users\wikto\desktop\programowanie\cp4\lab_03\templates\templates\main.cpp(14): warning C4244: "return": konwersja z "two" do "one", możliwa utrata danych
+          with
+          [
+              two=double
+          ]
+          and
+          [
+              one=int
+          ]
+  c:\users\wikto\desktop\programowanie\cp4\lab_03\templates\templates\main.cpp(281): note: zobacz odwołanie do funkcji szablon; wystąpienie „one min<int,double>(one,two)” jest kompilowane
+          with
+          [
+              one=int,
+              two=double
+          ]
+  Templates.vcxproj -> C:\Users\wikto\Desktop\Programowanie\CP4\Lab_03\Templates\Debug\Templates.exe
