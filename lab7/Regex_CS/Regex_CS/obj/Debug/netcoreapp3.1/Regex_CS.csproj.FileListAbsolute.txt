@@ -1,0 +1,13 @@
+C:\Users\wikto\Desktop\Programowanie\CP4\Lab_08\Regex_CS\Regex_CS\bin\Debug\netcoreapp3.1\Regex_CS.exe
+C:\Users\wikto\Desktop\Programowanie\CP4\Lab_08\Regex_CS\Regex_CS\bin\Debug\netcoreapp3.1\Regex_CS.deps.json
+C:\Users\wikto\Desktop\Programowanie\CP4\Lab_08\Regex_CS\Regex_CS\bin\Debug\netcoreapp3.1\Regex_CS.runtimeconfig.json
+C:\Users\wikto\Desktop\Programowanie\CP4\Lab_08\Regex_CS\Regex_CS\bin\Debug\netcoreapp3.1\Regex_CS.runtimeconfig.dev.json
+C:\Users\wikto\Desktop\Programowanie\CP4\Lab_08\Regex_CS\Regex_CS\bin\Debug\netcoreapp3.1\Regex_CS.dll
+C:\Users\wikto\Desktop\Programowanie\CP4\Lab_08\Regex_CS\Regex_CS\bin\Debug\netcoreapp3.1\Regex_CS.pdb
+C:\Users\wikto\Desktop\Programowanie\CP4\Lab_08\Regex_CS\Regex_CS\obj\Debug\netcoreapp3.1\Regex_CS.csprojAssemblyReference.cache
+C:\Users\wikto\Desktop\Programowanie\CP4\Lab_08\Regex_CS\Regex_CS\obj\Debug\netcoreapp3.1\Regex_CS.csproj.CoreCompileInputs.cache
+C:\Users\wikto\Desktop\Programowanie\CP4\Lab_08\Regex_CS\Regex_CS\obj\Debug\netcoreapp3.1\Regex_CS.AssemblyInfoInputs.cache
+C:\Users\wikto\Desktop\Programowanie\CP4\Lab_08\Regex_CS\Regex_CS\obj\Debug\netcoreapp3.1\Regex_CS.AssemblyInfo.cs
+C:\Users\wikto\Desktop\Programowanie\CP4\Lab_08\Regex_CS\Regex_CS\obj\Debug\netcoreapp3.1\Regex_CS.dll
+C:\Users\wikto\Desktop\Programowanie\CP4\Lab_08\Regex_CS\Regex_CS\obj\Debug\netcoreapp3.1\Regex_CS.pdb
+C:\Users\wikto\Desktop\Programowanie\CP4\Lab_08\Regex_CS\Regex_CS\obj\Debug\netcoreapp3.1\Regex_CS.genruntimeconfig.cache
