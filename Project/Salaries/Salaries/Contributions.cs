@@ -13,9 +13,9 @@ namespace Salaries
         private double rental;
         private double sick;
 
-        private double health_cont_base;
-        private double hc_deducted;
-        public double hc_asessed;
+        public double health_cont_base;
+        public double hc_deducted; //7.75%
+        public double hc_asessed;  //9%
 
         public void calc_conts(double brutto)
         {
@@ -25,9 +25,9 @@ namespace Salaries
             ZUS = pension + rental + sick;
         }
 
-        public void calc_health_conts(double brutto, double zus)
+        public void calc_health_conts(double brutto)
         {
-            health_cont_base = brutto - zus;
+            health_cont_base = brutto - ZUS;
             hc_deducted = health_cont_base * 0.0775;
             hc_asessed = health_cont_base * 0.09;
         }

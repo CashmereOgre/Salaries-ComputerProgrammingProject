@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace Salaries
 {
@@ -31,9 +32,9 @@ namespace Salaries
                 brutto = base_sal + seniority;
         }
 
-        public void calc_netto()
+        public void calc_netto(double zus, double hc, double tax)
         {
-            //uzupełnić po wypełnieniu wszystkich calc
+            netto = brutto - hc - tax;
         }
     }
 }
