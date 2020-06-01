@@ -1,0 +1,25 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ordesignerObjectsDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 11, 8.5" name="SalariesLINQ">
+  <DataContextMoniker Name="/SalariesLINQDataContext" />
+  <nestedChildShapes>
+    <classShape Id="b8205e7a-342a-47d5-ac5d-9e734fbc515b" absoluteBounds="3.75, 1, 2, 3.5016097005208326">
+      <DataClassMoniker Name="/SalariesLINQDataContext/Salaries" />
+      <nestedChildShapes>
+        <elementListCompartment Id="0415d886-2316-4213-9bca-444304b687b8" absoluteBounds="3.765, 1.46, 1.9700000000000002, 2.941609700520833" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="4112e4b2-f746-479c-8352-02092c13a60a" absoluteBounds="0.5, 1.25, 2, 1.9631982421875">
+      <DataClassMoniker Name="/SalariesLINQDataContext/Worker" />
+      <nestedChildShapes>
+        <elementListCompartment Id="a10efd8f-61b3-4fdd-b9ee-283328932df5" absoluteBounds="0.51499999999999968, 1.71, 1.9700000000000002, 1.4031982421875" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(2.5 : 2.04926396484375); (3.75 : 2.04926396484375)]" fixedFrom="Caller" fixedTo="Algorithm">
+      <AssociationMoniker Name="/SalariesLINQDataContext/Worker/Worker_Salaries" />
+      <nodes>
+        <classShapeMoniker Id="4112e4b2-f746-479c-8352-02092c13a60a" />
+        <classShapeMoniker Id="b8205e7a-342a-47d5-ac5d-9e734fbc515b" />
+      </nodes>
+    </associationConnector>
+  </nestedChildShapes>
+</ordesignerObjectsDiagram>

@@ -16,5 +16,16 @@ namespace Salaries
         {
             InitializeComponent();
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            AddWorker addWorker = new AddWorker();
+            addWorker.Show();
+        }
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

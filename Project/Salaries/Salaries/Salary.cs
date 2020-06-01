@@ -9,7 +9,6 @@ namespace Salaries
 {
     class Salary
     {
-        private bool bonus_bool;
         public double brutto;
         private double base_sal;
         private double bonus;
@@ -25,11 +24,8 @@ namespace Salaries
                 else
                     seniority = base_sal * years * 0.01;
             }
+            brutto = base_sal + bonus + seniority;
 
-            if (bonus_bool)
-                brutto = base_sal + bonus + seniority;
-            else
-                brutto = base_sal + seniority;
         }
 
         public void calc_netto(double zus, double hc, double tax)

@@ -1,0 +1,33 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="SalariesDB" Class="SalariesLINQDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="AppSettings" ConnectionString="Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=|DataDirectory|\SalariesDB.mdf;Integrated Security=True" SettingsObjectName="Salaries.Properties.Settings" SettingsPropertyName="SalariesDBConnectionString" Provider="System.Data.SqlClient" />
+  <Table Name="dbo.Salaries" Member="Salaries">
+    <Type Name="Salaries">
+      <Column Name="SalaryID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="WorkerID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Base_sal" Type="System.Double" DbType="Float NOT NULL" CanBeNull="false" />
+      <Column Name="Bonus" Type="System.Double" DbType="Float NOT NULL" CanBeNull="false" />
+      <Column Name="YearsInWork" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="ZUS" Type="System.Double" DbType="Float NOT NULL" CanBeNull="false" />
+      <Column Name="HCDeducted" Type="System.Double" DbType="Float NOT NULL" CanBeNull="false" />
+      <Column Name="HCAsessed" Type="System.Double" DbType="Float NOT NULL" CanBeNull="false" />
+      <Column Name="WorksInLiveCity" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="TaxPercent" Type="System.Double" DbType="Float NOT NULL" CanBeNull="false" />
+      <Column Name="TaxRelief" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="Tax" Type="System.Double" DbType="Float NOT NULL" CanBeNull="false" />
+      <Column Name="Brutto" Type="System.Double" DbType="Float NOT NULL" CanBeNull="false" />
+      <Column Name="Netto" Type="System.Double" DbType="Float NOT NULL" CanBeNull="false" />
+      <Association Name="Worker_Salaries" Member="Worker" ThisKey="WorkerID" OtherKey="WorkerID" Type="Worker" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Worker" Member="Worker">
+    <Type Name="Worker">
+      <Column Name="WorkerID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Name" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Surname" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="DateOfBirth" Type="System.DateTime" DbType="Date NOT NULL" CanBeNull="false" />
+      <Column Name="Gender" Type="System.String" DbType="NChar(10) NOT NULL" CanBeNull="false" />
+      <Column Name="Pesel" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Association Name="Worker_Salaries" Member="Salaries" ThisKey="WorkerID" OtherKey="WorkerID" Type="Salaries" />
+    </Type>
+  </Table>
+</Database>
