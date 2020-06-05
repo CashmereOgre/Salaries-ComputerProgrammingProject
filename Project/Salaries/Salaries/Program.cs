@@ -24,7 +24,7 @@ namespace Salaries
 
             using (DbConnection connection = factory.CreateConnection())
             {
-                if(connection == null)
+                if (connection == null)
                 {
                     //exception
                 }
@@ -33,7 +33,7 @@ namespace Salaries
 
                 DbCommand command = factory.CreateCommand();
 
-                if(command == null)
+                if (command == null)
                 {
                     //exception
                 }
