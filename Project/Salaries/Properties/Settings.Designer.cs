@@ -33,5 +33,16 @@ namespace Salaries.Properties {
                 return ((string)(this["SalariesDBConnectionString"]));
             }
         }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=(LocalDB)\\MSSQLLocalDB;Initial Catalog=SalariesDB2;Integrated Securit" +
+            "y=True")]
+        public string SalariesDB2ConnectionString {
+            get {
+                return ((string)(this["SalariesDB2ConnectionString"]));
+            }
+        }
     }
 }
