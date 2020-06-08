@@ -193,19 +193,21 @@
     <Compile Include="AddSalary.Designer.cs">
       <DependentUpon>AddSalary.cs</DependentUpon>
     </Compile>
-    <Compile Include="AddWorker.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="AddWorker.Designer.cs">
-      <DependentUpon>AddWorker.cs</DependentUpon>
-    </Compile>
     <Compile Include="ChooseWorker.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="ChooseWorker.Designer.cs">
       <DependentUpon>ChooseWorker.cs</DependentUpon>
     </Compile>
+    <Compile Include="AddWorker.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AddWorker.Designer.cs">
+      <DependentUpon>AddWorker.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CalculationManager.cs" />
     <Compile Include="Contributions.cs" />
+    <Compile Include="DBManager.cs" />
     <Compile Include="DisplayAllSalaries.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -234,6 +236,12 @@
     </Compile>
     <Compile Include="Salary.cs" />
     <Compile Include="Taxes_and_others.cs" />
+    <EmbeddedResource Include="AddSalary.resx">
+      <DependentUpon>AddSalary.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ChooseWorker.resx">
+      <DependentUpon>ChooseWorker.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="AddWorker.resx">
       <DependentUpon>AddWorker.cs</DependentUpon>
     </EmbeddedResource>
@@ -270,15 +278,6 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="SalariesDB.mdf">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="SalariesDB_log.ldf">
-      <DependentUpon>SalariesDB.mdf</DependentUpon>
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
   </ItemGroup>
   <ItemGroup>
     <Service Include="{3259AA49-8AA1-44D3-9025-A0B520596A8C}" />

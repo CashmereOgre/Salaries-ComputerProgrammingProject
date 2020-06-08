@@ -7,6 +7,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Data.SqlClient;
+using System.Configuration;
 
 namespace Salaries
 {
@@ -30,13 +32,12 @@ namespace Salaries
             //exceptions, np puste pole, zły format daty
 
             DateTime DoB = DateTime.Parse(DoBs);
+            bool saved =  DBManager.AddWorkerDB(name, surname, gender, DoB, pesel);
 
-            SalariesLINQDataContext db = new SalariesLINQDataContext();
-
-            Worker worker = new Worker() { Name = name, Surname = surname, Gender = gender, DateOfBirth = DoB, Pesel = pesel };
-            db.Worker.InsertOnSubmit(worker);
-
-            db.SubmitChanges();
+            if (saved)
+                MessageBox.Show("Worker added successfully");
+            else
+                MessageBox.Show("Adding worker failed");
         }
 
         private void SurnameTB_TextChanged(object sender, EventArgs e)

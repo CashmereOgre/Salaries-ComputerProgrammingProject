@@ -28,12 +28,35 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
+            this.AddSalaryWorker = new System.Windows.Forms.DataGridView();
+            ((System.ComponentModel.ISupportInitialize)(this.AddSalaryWorker)).BeginInit();
+            this.SuspendLayout();
+            // 
+            // AddSalaryWorker
+            // 
+            this.AddSalaryWorker.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.AddSalaryWorker.Location = new System.Drawing.Point(13, 13);
+            this.AddSalaryWorker.Name = "AddSalaryWorker";
+            this.AddSalaryWorker.RowHeadersWidth = 51;
+            this.AddSalaryWorker.RowTemplate.Height = 24;
+            this.AddSalaryWorker.Size = new System.Drawing.Size(775, 72);
+            this.AddSalaryWorker.TabIndex = 0;
+            // 
+            // AddSalary
+            // 
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Text = "AddSalary";
+            this.Controls.Add(this.AddSalaryWorker);
+            this.Name = "AddSalary";
+            this.Text = "Add Salary";
+            ((System.ComponentModel.ISupportInitialize)(this.AddSalaryWorker)).EndInit();
+            this.ResumeLayout(false);
+
         }
 
         #endregion
+
+        private System.Windows.Forms.DataGridView AddSalaryWorker;
     }
 }

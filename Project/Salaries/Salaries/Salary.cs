@@ -7,7 +7,7 @@ using System.Windows.Forms;
 
 namespace Salaries
 {
-    class Salary
+    class Salarycalc
     {
         public double brutto;
         private double base_sal;

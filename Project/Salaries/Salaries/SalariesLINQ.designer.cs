@@ -22,7 +22,7 @@ namespace Salaries
 	using System;
 	
 	
-	[global::System.Data.Linq.Mapping.DatabaseAttribute(Name="SalariesDB")]
+	[global::System.Data.Linq.Mapping.DatabaseAttribute(Name="SalariesDB2")]
 	public partial class SalariesLINQDataContext : System.Data.Linq.DataContext
 	{
 		
@@ -30,16 +30,16 @@ namespace Salaries
 		
     #region Extensibility Method Definitions
     partial void OnCreated();
-    partial void InsertSalaries(Salaries instance);
-    partial void UpdateSalaries(Salaries instance);
-    partial void DeleteSalaries(Salaries instance);
+    partial void InsertSalary(Salary instance);
+    partial void UpdateSalary(Salary instance);
+    partial void DeleteSalary(Salary instance);
     partial void InsertWorker(Worker instance);
     partial void UpdateWorker(Worker instance);
     partial void DeleteWorker(Worker instance);
     #endregion
 		
 		public SalariesLINQDataContext() : 
-				base(global::Salaries.Properties.Settings.Default.SalariesDBConnectionString, mappingSource)
+				base(global::Salaries.Properties.Settings.Default.SalariesDB2ConnectionString, mappingSource)
 		{
 			OnCreated();
 		}
@@ -68,11 +68,11 @@ namespace Salaries
 			OnCreated();
 		}
 		
-		public System.Data.Linq.Table<Salaries> Salaries
+		public System.Data.Linq.Table<Salary> Salary
 		{
 			get
 			{
-				return this.GetTable<Salaries>();
+				return this.GetTable<Salary>();
 			}
 		}
 		
@@ -85,8 +85,8 @@ namespace Salaries
 		}
 	}
 	
-	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.Salaries")]
-	public partial class Salaries : INotifyPropertyChanging, INotifyPropertyChanged
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.Salary")]
+	public partial class Salary : INotifyPropertyChanging, INotifyPropertyChanged
 	{
 		
 		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
@@ -155,7 +155,7 @@ namespace Salaries
     partial void OnNettoChanged();
     #endregion
 		
-		public Salaries()
+		public Salary()
 		{
 			this._Worker = default(EntityRef<Worker>);
 			OnCreated();
@@ -445,7 +445,7 @@ namespace Salaries
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Worker_Salaries", Storage="_Worker", ThisKey="WorkerID", OtherKey="WorkerID", IsForeignKey=true)]
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Worker_Salary", Storage="_Worker", ThisKey="WorkerID", OtherKey="WorkerID", IsForeignKey=true)]
 		public Worker Worker
 		{
 			get
@@ -462,12 +462,12 @@ namespace Salaries
 					if ((previousValue != null))
 					{
 						this._Worker.Entity = null;
-						previousValue.Salaries.Remove(this);
+						previousValue.Salary.Remove(this);
 					}
 					this._Worker.Entity = value;
 					if ((value != null))
 					{
-						value.Salaries.Add(this);
+						value.Salary.Add(this);
 						this._WorkerID = value.WorkerID;
 					}
 					else
@@ -518,7 +518,7 @@ namespace Salaries
 		
 		private string _Pesel;
 		
-		private EntitySet<Salaries> _Salaries;
+		private EntitySet<Salary> _Salary;
 		
     #region Extensibility Method Definitions
     partial void OnLoaded();
@@ -540,7 +540,7 @@ namespace Salaries
 		
 		public Worker()
 		{
-			this._Salaries = new EntitySet<Salaries>(new Action<Salaries>(this.attach_Salaries), new Action<Salaries>(this.detach_Salaries));
+			this._Salary = new EntitySet<Salary>(new Action<Salary>(this.attach_Salary), new Action<Salary>(this.detach_Salary));
 			OnCreated();
 		}
 		
@@ -664,16 +664,16 @@ namespace Salaries
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Worker_Salaries", Storage="_Salaries", ThisKey="WorkerID", OtherKey="WorkerID")]
-		public EntitySet<Salaries> Salaries
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Worker_Salary", Storage="_Salary", ThisKey="WorkerID", OtherKey="WorkerID")]
+		public EntitySet<Salary> Salary
 		{
 			get
 			{
-				return this._Salaries;
+				return this._Salary;
 			}
 			set
 			{
-				this._Salaries.Assign(value);
+				this._Salary.Assign(value);
 			}
 		}
 		
@@ -697,13 +697,13 @@ namespace Salaries
 			}
 		}
 		
-		private void attach_Salaries(Salaries entity)
+		private void attach_Salary(Salary entity)
 		{
 			this.SendPropertyChanging();
 			entity.Worker = this;
 		}
 		
-		private void detach_Salaries(Salaries entity)
+		private void detach_Salary(Salary entity)
 		{
 			this.SendPropertyChanging();
 			entity.Worker = null;

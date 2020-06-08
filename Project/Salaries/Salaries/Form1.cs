@@ -23,9 +23,10 @@ namespace Salaries
             addWorker.Show();
         }
 
-        private void Form1_Load(object sender, EventArgs e)
+        private void buttonAS_Click(object sender, EventArgs e)
         {
-
+            ChooseWorker chooseWorker = new ChooseWorker();
+            chooseWorker.Show();
         }
     }
 }

@@ -12,9 +12,13 @@ namespace Salaries
 {
     public partial class AddSalary : Form
     {
-        public AddSalary()
+        Worker worker;
+        public AddSalary(Worker wo)
         {
             InitializeComponent();
+            worker = wo;
+
+            AddSalaryWorker.DataSource = worker; //dodać do DBManager select one worker
         }
     }
 }
