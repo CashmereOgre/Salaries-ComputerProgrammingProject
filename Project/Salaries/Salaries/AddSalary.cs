@@ -18,7 +18,24 @@ namespace Salaries
             InitializeComponent();
             worker = wo;
 
-            AddSalaryWorker.DataSource = worker; //dodać do DBManager select one worker
+            //AddSalaryWorker.DataSource = worker; //dodać do DBManager select one worker
+            idTB.Text = worker.WorkerID.ToString();
+            nameTB.Text = worker.Name;
+            surnameTB.Text = worker.Surname;
+            dobTB.Text = worker.DateOfBirth.ToString();
+            peselTB.Text = worker.Pesel;
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            double bas = double.Parse(base_salTB.Text);
+            int yrs = int.Parse(seniorTB.Text);
+            double bon = double.Parse(bonusTB.Text);
+            double tax = double.Parse(taxTB.Text);
+            bool rel = relief.Checked;
+            bool diffCity = anotherCity.Checked;
+
+            CalculationManager.calculateEverything(bas, yrs, bon, tax, rel, diffCity);
         }
     }
 }

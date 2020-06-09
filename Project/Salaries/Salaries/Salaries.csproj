@@ -234,7 +234,7 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>SalariesLINQ.dbml</DependentUpon>
     </Compile>
-    <Compile Include="Salary.cs" />
+    <Compile Include="Salarycalc.cs" />
     <Compile Include="Taxes_and_others.cs" />
     <EmbeddedResource Include="AddSalary.resx">
       <DependentUpon>AddSalary.cs</DependentUpon>

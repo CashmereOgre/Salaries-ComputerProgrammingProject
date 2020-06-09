@@ -30,12 +30,12 @@ namespace Salaries
 		
     #region Extensibility Method Definitions
     partial void OnCreated();
-    partial void InsertSalary(Salary instance);
-    partial void UpdateSalary(Salary instance);
-    partial void DeleteSalary(Salary instance);
     partial void InsertWorker(Worker instance);
     partial void UpdateWorker(Worker instance);
     partial void DeleteWorker(Worker instance);
+    partial void InsertSalary(Salary instance);
+    partial void UpdateSalary(Salary instance);
+    partial void DeleteSalary(Salary instance);
     #endregion
 		
 		public SalariesLINQDataContext() : 
@@ -68,6 +68,14 @@ namespace Salaries
 			OnCreated();
 		}
 		
+		public System.Data.Linq.Table<Worker> Worker
+		{
+			get
+			{
+				return this.GetTable<Worker>();
+			}
+		}
+		
 		public System.Data.Linq.Table<Salary> Salary
 		{
 			get
@@ -75,13 +83,215 @@ namespace Salaries
 				return this.GetTable<Salary>();
 			}
 		}
+	}
+	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.Worker")]
+	public partial class Worker : INotifyPropertyChanging, INotifyPropertyChanged
+	{
 		
-		public System.Data.Linq.Table<Worker> Worker
+		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
+		
+		private int _WorkerID;
+		
+		private string _Name;
+		
+		private string _Surname;
+		
+		private System.DateTime _DateOfBirth;
+		
+		private string _Gender;
+		
+		private string _Pesel;
+		
+		private EntitySet<Salary> _Salary;
+		
+    #region Extensibility Method Definitions
+    partial void OnLoaded();
+    partial void OnValidate(System.Data.Linq.ChangeAction action);
+    partial void OnCreated();
+    partial void OnWorkerIDChanging(int value);
+    partial void OnWorkerIDChanged();
+    partial void OnNameChanging(string value);
+    partial void OnNameChanged();
+    partial void OnSurnameChanging(string value);
+    partial void OnSurnameChanged();
+    partial void OnDateOfBirthChanging(System.DateTime value);
+    partial void OnDateOfBirthChanged();
+    partial void OnGenderChanging(string value);
+    partial void OnGenderChanged();
+    partial void OnPeselChanging(string value);
+    partial void OnPeselChanged();
+    #endregion
+		
+		public Worker()
+		{
+			this._Salary = new EntitySet<Salary>(new Action<Salary>(this.attach_Salary), new Action<Salary>(this.detach_Salary));
+			OnCreated();
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_WorkerID", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
+		public int WorkerID
 		{
 			get
 			{
-				return this.GetTable<Worker>();
+				return this._WorkerID;
 			}
+			set
+			{
+				if ((this._WorkerID != value))
+				{
+					this.OnWorkerIDChanging(value);
+					this.SendPropertyChanging();
+					this._WorkerID = value;
+					this.SendPropertyChanged("WorkerID");
+					this.OnWorkerIDChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Name", DbType="NVarChar(50) NOT NULL", CanBeNull=false)]
+		public string Name
+		{
+			get
+			{
+				return this._Name;
+			}
+			set
+			{
+				if ((this._Name != value))
+				{
+					this.OnNameChanging(value);
+					this.SendPropertyChanging();
+					this._Name = value;
+					this.SendPropertyChanged("Name");
+					this.OnNameChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Surname", DbType="NVarChar(50) NOT NULL", CanBeNull=false)]
+		public string Surname
+		{
+			get
+			{
+				return this._Surname;
+			}
+			set
+			{
+				if ((this._Surname != value))
+				{
+					this.OnSurnameChanging(value);
+					this.SendPropertyChanging();
+					this._Surname = value;
+					this.SendPropertyChanged("Surname");
+					this.OnSurnameChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_DateOfBirth", DbType="Date NOT NULL")]
+		public System.DateTime DateOfBirth
+		{
+			get
+			{
+				return this._DateOfBirth;
+			}
+			set
+			{
+				if ((this._DateOfBirth != value))
+				{
+					this.OnDateOfBirthChanging(value);
+					this.SendPropertyChanging();
+					this._DateOfBirth = value;
+					this.SendPropertyChanged("DateOfBirth");
+					this.OnDateOfBirthChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Gender", DbType="NChar(10) NOT NULL", CanBeNull=false)]
+		public string Gender
+		{
+			get
+			{
+				return this._Gender;
+			}
+			set
+			{
+				if ((this._Gender != value))
+				{
+					this.OnGenderChanging(value);
+					this.SendPropertyChanging();
+					this._Gender = value;
+					this.SendPropertyChanged("Gender");
+					this.OnGenderChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Pesel", DbType="NVarChar(50) NOT NULL", CanBeNull=false)]
+		public string Pesel
+		{
+			get
+			{
+				return this._Pesel;
+			}
+			set
+			{
+				if ((this._Pesel != value))
+				{
+					this.OnPeselChanging(value);
+					this.SendPropertyChanging();
+					this._Pesel = value;
+					this.SendPropertyChanged("Pesel");
+					this.OnPeselChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Worker_Salary1", Storage="_Salary", ThisKey="WorkerID", OtherKey="WorkerID")]
+		public EntitySet<Salary> Salary
+		{
+			get
+			{
+				return this._Salary;
+			}
+			set
+			{
+				this._Salary.Assign(value);
+			}
+		}
+		
+		public event PropertyChangingEventHandler PropertyChanging;
+		
+		public event PropertyChangedEventHandler PropertyChanged;
+		
+		protected virtual void SendPropertyChanging()
+		{
+			if ((this.PropertyChanging != null))
+			{
+				this.PropertyChanging(this, emptyChangingEventArgs);
+			}
+		}
+		
+		protected virtual void SendPropertyChanged(String propertyName)
+		{
+			if ((this.PropertyChanged != null))
+			{
+				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+			}
+		}
+		
+		private void attach_Salary(Salary entity)
+		{
+			this.SendPropertyChanging();
+			entity.Worker = this;
+		}
+		
+		private void detach_Salary(Salary entity)
+		{
+			this.SendPropertyChanging();
+			entity.Worker = null;
 		}
 	}
 	
@@ -119,6 +329,8 @@ namespace Salaries
 		
 		private double _Netto;
 		
+		private System.DateTime _DateOfContributing;
+		
 		private EntityRef<Worker> _Worker;
 		
     #region Extensibility Method Definitions
@@ -153,6 +365,8 @@ namespace Salaries
     partial void OnBruttoChanged();
     partial void OnNettoChanging(double value);
     partial void OnNettoChanged();
+    partial void OnDateOfContributingChanging(System.DateTime value);
+    partial void OnDateOfContributingChanged();
     #endregion
 		
 		public Salary()
@@ -445,7 +659,27 @@ namespace Salaries
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Worker_Salary", Storage="_Worker", ThisKey="WorkerID", OtherKey="WorkerID", IsForeignKey=true)]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_DateOfContributing", DbType="DateTime NOT NULL")]
+		public System.DateTime DateOfContributing
+		{
+			get
+			{
+				return this._DateOfContributing;
+			}
+			set
+			{
+				if ((this._DateOfContributing != value))
+				{
+					this.OnDateOfContributingChanging(value);
+					this.SendPropertyChanging();
+					this._DateOfContributing = value;
+					this.SendPropertyChanged("DateOfContributing");
+					this.OnDateOfContributingChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Worker_Salary1", Storage="_Worker", ThisKey="WorkerID", OtherKey="WorkerID", IsForeignKey=true)]
 		public Worker Worker
 		{
 			get
@@ -497,216 +731,6 @@ namespace Salaries
 			{
 				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
 			}
-		}
-	}
-	
-	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.Worker")]
-	public partial class Worker : INotifyPropertyChanging, INotifyPropertyChanged
-	{
-		
-		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
-		
-		private int _WorkerID;
-		
-		private string _Name;
-		
-		private string _Surname;
-		
-		private System.DateTime _DateOfBirth;
-		
-		private string _Gender;
-		
-		private string _Pesel;
-		
-		private EntitySet<Salary> _Salary;
-		
-    #region Extensibility Method Definitions
-    partial void OnLoaded();
-    partial void OnValidate(System.Data.Linq.ChangeAction action);
-    partial void OnCreated();
-    partial void OnWorkerIDChanging(int value);
-    partial void OnWorkerIDChanged();
-    partial void OnNameChanging(string value);
-    partial void OnNameChanged();
-    partial void OnSurnameChanging(string value);
-    partial void OnSurnameChanged();
-    partial void OnDateOfBirthChanging(System.DateTime value);
-    partial void OnDateOfBirthChanged();
-    partial void OnGenderChanging(string value);
-    partial void OnGenderChanged();
-    partial void OnPeselChanging(string value);
-    partial void OnPeselChanged();
-    #endregion
-		
-		public Worker()
-		{
-			this._Salary = new EntitySet<Salary>(new Action<Salary>(this.attach_Salary), new Action<Salary>(this.detach_Salary));
-			OnCreated();
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_WorkerID", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
-		public int WorkerID
-		{
-			get
-			{
-				return this._WorkerID;
-			}
-			set
-			{
-				if ((this._WorkerID != value))
-				{
-					this.OnWorkerIDChanging(value);
-					this.SendPropertyChanging();
-					this._WorkerID = value;
-					this.SendPropertyChanged("WorkerID");
-					this.OnWorkerIDChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Name", DbType="NVarChar(50) NOT NULL", CanBeNull=false)]
-		public string Name
-		{
-			get
-			{
-				return this._Name;
-			}
-			set
-			{
-				if ((this._Name != value))
-				{
-					this.OnNameChanging(value);
-					this.SendPropertyChanging();
-					this._Name = value;
-					this.SendPropertyChanged("Name");
-					this.OnNameChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Surname", DbType="NVarChar(50) NOT NULL", CanBeNull=false)]
-		public string Surname
-		{
-			get
-			{
-				return this._Surname;
-			}
-			set
-			{
-				if ((this._Surname != value))
-				{
-					this.OnSurnameChanging(value);
-					this.SendPropertyChanging();
-					this._Surname = value;
-					this.SendPropertyChanged("Surname");
-					this.OnSurnameChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_DateOfBirth", DbType="Date NOT NULL")]
-		public System.DateTime DateOfBirth
-		{
-			get
-			{
-				return this._DateOfBirth;
-			}
-			set
-			{
-				if ((this._DateOfBirth != value))
-				{
-					this.OnDateOfBirthChanging(value);
-					this.SendPropertyChanging();
-					this._DateOfBirth = value;
-					this.SendPropertyChanged("DateOfBirth");
-					this.OnDateOfBirthChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Gender", DbType="NChar(10) NOT NULL", CanBeNull=false)]
-		public string Gender
-		{
-			get
-			{
-				return this._Gender;
-			}
-			set
-			{
-				if ((this._Gender != value))
-				{
-					this.OnGenderChanging(value);
-					this.SendPropertyChanging();
-					this._Gender = value;
-					this.SendPropertyChanged("Gender");
-					this.OnGenderChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Pesel", DbType="NVarChar(50) NOT NULL", CanBeNull=false)]
-		public string Pesel
-		{
-			get
-			{
-				return this._Pesel;
-			}
-			set
-			{
-				if ((this._Pesel != value))
-				{
-					this.OnPeselChanging(value);
-					this.SendPropertyChanging();
-					this._Pesel = value;
-					this.SendPropertyChanged("Pesel");
-					this.OnPeselChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Worker_Salary", Storage="_Salary", ThisKey="WorkerID", OtherKey="WorkerID")]
-		public EntitySet<Salary> Salary
-		{
-			get
-			{
-				return this._Salary;
-			}
-			set
-			{
-				this._Salary.Assign(value);
-			}
-		}
-		
-		public event PropertyChangingEventHandler PropertyChanging;
-		
-		public event PropertyChangedEventHandler PropertyChanged;
-		
-		protected virtual void SendPropertyChanging()
-		{
-			if ((this.PropertyChanging != null))
-			{
-				this.PropertyChanging(this, emptyChangingEventArgs);
-			}
-		}
-		
-		protected virtual void SendPropertyChanged(String propertyName)
-		{
-			if ((this.PropertyChanged != null))
-			{
-				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
-			}
-		}
-		
-		private void attach_Salary(Salary entity)
-		{
-			this.SendPropertyChanging();
-			entity.Worker = this;
-		}
-		
-		private void detach_Salary(Salary entity)
-		{
-			this.SendPropertyChanging();
-			entity.Worker = null;
 		}
 	}
 }
