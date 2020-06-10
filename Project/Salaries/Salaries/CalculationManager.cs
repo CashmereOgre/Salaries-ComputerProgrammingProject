@@ -8,7 +8,7 @@ namespace Salaries
 {
     static class CalculationManager
     {
-        public static void calculateEverything(double bas, int yrs, double bon, double tax, bool rel, bool city)
+        public static bool calculateEverything(Worker worker, double bas, int yrs, double bon, double tax, bool rel, bool city)
         {
             Salarycalc salaryCalc = new Salarycalc(bas, bon, yrs);
             salaryCalc.calc_brutto();
@@ -21,6 +21,13 @@ namespace Salaries
             TaO.calc_taxes(contributions);
 
             salaryCalc.calc_netto(contributions.ZUS, contributions.hc_asessed, TaO.tax_complete);
+
+            bool added = DBManager.AddSalaryDB(worker, salaryCalc, TaO, contributions);
+
+            if (added)
+                return true;
+            else
+                return false;
         }
     }
 }

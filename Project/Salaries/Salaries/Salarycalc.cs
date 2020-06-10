@@ -31,8 +31,7 @@ namespace Salaries
                 else
                     seniority = base_sal * years * 0.01;
             }
-            brutto = base_sal + bonus + seniority;
-
+            brutto = Math.Round(base_sal, 2) + Math.Round(bonus, 2) + Math.Round(seniority, 2);
         }
 
         public void calc_netto(double zus, double hc, double tax) 

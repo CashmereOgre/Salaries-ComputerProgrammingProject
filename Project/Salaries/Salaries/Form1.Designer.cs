@@ -31,7 +31,7 @@
             this.buttonAW = new System.Windows.Forms.Button();
             this.buttonAS = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
-            this.button4 = new System.Windows.Forms.Button();
+            this.ButtonDAS = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // buttonAW
@@ -63,21 +63,22 @@
             this.button3.Text = "Display workers";
             this.button3.UseVisualStyleBackColor = true;
             // 
-            // button4
+            // ButtonDAS
             // 
-            this.button4.Location = new System.Drawing.Point(42, 348);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(328, 66);
-            this.button4.TabIndex = 3;
-            this.button4.Text = "Display all salaries";
-            this.button4.UseVisualStyleBackColor = true;
+            this.ButtonDAS.Location = new System.Drawing.Point(42, 348);
+            this.ButtonDAS.Name = "ButtonDAS";
+            this.ButtonDAS.Size = new System.Drawing.Size(328, 66);
+            this.ButtonDAS.TabIndex = 3;
+            this.ButtonDAS.Text = "Display all salaries";
+            this.ButtonDAS.UseVisualStyleBackColor = true;
+            this.ButtonDAS.Click += new System.EventHandler(this.ButtonDAS_Click);
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(416, 446);
-            this.Controls.Add(this.button4);
+            this.Controls.Add(this.ButtonDAS);
             this.Controls.Add(this.button3);
             this.Controls.Add(this.buttonAS);
             this.Controls.Add(this.buttonAW);
@@ -92,7 +93,7 @@
         private System.Windows.Forms.Button buttonAW;
         private System.Windows.Forms.Button buttonAS;
         private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.Button button4;
+        private System.Windows.Forms.Button ButtonDAS;
     }
 }
 

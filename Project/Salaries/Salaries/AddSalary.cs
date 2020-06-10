@@ -22,6 +22,7 @@ namespace Salaries
             idTB.Text = worker.WorkerID.ToString();
             nameTB.Text = worker.Name;
             surnameTB.Text = worker.Surname;
+            genderTB.Text = worker.Gender;
             dobTB.Text = worker.DateOfBirth.ToString();
             peselTB.Text = worker.Pesel;
         }
@@ -35,7 +36,12 @@ namespace Salaries
             bool rel = relief.Checked;
             bool diffCity = anotherCity.Checked;
 
-            CalculationManager.calculateEverything(bas, yrs, bon, tax, rel, diffCity);
+            bool saved = CalculationManager.calculateEverything(worker, bas, yrs, bon, tax, rel, diffCity);
+
+            if (saved)
+                MessageBox.Show("Salary calculated and added successfully");
+            else
+                MessageBox.Show("Adding or calculating salary failed");
         }
     }
 }

@@ -28,5 +28,11 @@ namespace Salaries
             ChooseWorker chooseWorker = new ChooseWorker();
             chooseWorker.Show();
         }
+
+        private void ButtonDAS_Click(object sender, EventArgs e)
+        {
+            DisplayAllSalaries displayAllSalaries = new DisplayAllSalaries();
+            displayAllSalaries.Show();
+        }
     }
 }

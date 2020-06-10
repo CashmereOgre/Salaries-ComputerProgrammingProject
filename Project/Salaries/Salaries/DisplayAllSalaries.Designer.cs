@@ -28,12 +28,38 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
+            this.DispAllSalaries = new System.Windows.Forms.DataGridView();
+            ((System.ComponentModel.ISupportInitialize)(this.DispAllSalaries)).BeginInit();
+            this.SuspendLayout();
+            // 
+            // DispAllSalaries
+            // 
+            this.DispAllSalaries.AllowUserToAddRows = false;
+            this.DispAllSalaries.AllowUserToDeleteRows = false;
+            this.DispAllSalaries.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.DispAllSalaries.Location = new System.Drawing.Point(12, 12);
+            this.DispAllSalaries.Name = "DispAllSalaries";
+            this.DispAllSalaries.ReadOnly = true;
+            this.DispAllSalaries.RowHeadersWidth = 51;
+            this.DispAllSalaries.RowTemplate.Height = 24;
+            this.DispAllSalaries.Size = new System.Drawing.Size(754, 426);
+            this.DispAllSalaries.TabIndex = 0;
+            // 
+            // DisplayAllSalaries
+            // 
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Text = "DisplayAllSalaries";
+            this.ClientSize = new System.Drawing.Size(966, 450);
+            this.Controls.Add(this.DispAllSalaries);
+            this.Name = "DisplayAllSalaries";
+            this.Text = "Display All Salaries";
+            ((System.ComponentModel.ISupportInitialize)(this.DispAllSalaries)).EndInit();
+            this.ResumeLayout(false);
+
         }
 
         #endregion
+
+        private System.Windows.Forms.DataGridView DispAllSalaries;
     }
 }

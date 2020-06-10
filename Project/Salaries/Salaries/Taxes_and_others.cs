@@ -38,7 +38,7 @@ namespace Salaries
         {
             tax_base = cont.health_cont_base - calc_obt_costs();
 
-            tax_1st_step = tax_base * tax_precent * 0.01;
+            tax_1st_step = Math.Round((tax_base * tax_precent * 0.01), 2);
 
             if (relief)
                 tax_relief = 43.76;

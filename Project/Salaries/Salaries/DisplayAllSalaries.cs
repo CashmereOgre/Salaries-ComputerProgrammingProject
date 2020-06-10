@@ -15,6 +15,8 @@ namespace Salaries
         public DisplayAllSalaries()
         {
             InitializeComponent();
+
+            DispAllSalaries.DataSource = DBManager.DisplayAllDB<Salary>();
         }
     }
 }

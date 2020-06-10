@@ -23,13 +23,14 @@ namespace Salaries
             rental = brutto * 0.015;
             sick = brutto * 0.0245;
             ZUS = pension + rental + sick;
+            ZUS = Math.Round(ZUS, 2);
         }
 
         public void calc_health_conts(double brutto)
         {
             health_cont_base = brutto - ZUS;
-            hc_deducted = health_cont_base * 0.0775;
-            hc_asessed = health_cont_base * 0.09;
+            hc_deducted = Math.Round((health_cont_base * 0.0775), 2);
+            hc_asessed = Math.Round((health_cont_base * 0.09), 2);
         }
     }
 }
