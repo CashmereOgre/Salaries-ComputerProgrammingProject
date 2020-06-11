@@ -42,6 +42,7 @@
             this.DispAllSalaries.ReadOnly = true;
             this.DispAllSalaries.RowHeadersWidth = 51;
             this.DispAllSalaries.RowTemplate.Height = 24;
+            this.DispAllSalaries.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.DispAllSalaries.Size = new System.Drawing.Size(754, 426);
             this.DispAllSalaries.TabIndex = 0;
             // 

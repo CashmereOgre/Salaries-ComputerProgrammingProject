@@ -208,6 +208,12 @@
     <Compile Include="CalculationManager.cs" />
     <Compile Include="Contributions.cs" />
     <Compile Include="DBManager.cs" />
+    <Compile Include="DispAllWorkers.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DispAllWorkers.Designer.cs">
+      <DependentUpon>DispAllWorkers.cs</DependentUpon>
+    </Compile>
     <Compile Include="DisplayAllSalaries.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -244,6 +250,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="AddWorker.resx">
       <DependentUpon>AddWorker.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DispAllWorkers.resx">
+      <DependentUpon>DispAllWorkers.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="DisplayAllSalaries.resx">
       <DependentUpon>DisplayAllSalaries.cs</DependentUpon>

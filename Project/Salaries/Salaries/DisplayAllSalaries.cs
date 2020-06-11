@@ -18,5 +18,12 @@ namespace Salaries
 
             DispAllSalaries.DataSource = DBManager.DisplayAllDB<Salary>();
         }
+
+        public DisplayAllSalaries(int workerID)
+        {
+            InitializeComponent();
+
+            DispAllSalaries.DataSource = DBManager.DiplayWorkersSalariesDB(workerID);
+        }
     }
 }

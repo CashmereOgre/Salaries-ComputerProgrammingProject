@@ -46,6 +46,15 @@ namespace Salaries
             return selectQuery;
         }
 
+        public static IQueryable<Salary> DiplayWorkersSalariesDB(int workerID)
+        {
+            SalariesLINQDataContext db = new SalariesLINQDataContext(con);
+            var selectQuery = from sal in db.GetTable<Salary>()
+                              where sal.WorkerID == workerID
+                              select sal;
+            return selectQuery;
+        }
+
         public static bool AddSalaryDB(Worker worker, Salarycalc salaryC, Taxes_and_others TaO, Contributions cont)
         {
             SalariesLINQDataContext db = new SalariesLINQDataContext(con);

@@ -34,5 +34,11 @@ namespace Salaries
             DisplayAllSalaries displayAllSalaries = new DisplayAllSalaries();
             displayAllSalaries.Show();
         }
+
+        private void buttonDW_Click(object sender, EventArgs e)
+        {
+            DispAllWorkers dispAllWorkers = new DispAllWorkers();
+            dispAllWorkers.Show();
+        }
     }
 }
