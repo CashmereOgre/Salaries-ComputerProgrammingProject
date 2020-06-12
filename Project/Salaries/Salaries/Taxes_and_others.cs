@@ -46,6 +46,8 @@ namespace Salaries
                 tax_relief = 0;
 
             tax_raw = tax_1st_step - tax_relief - cont.hc_deducted;
+            if (tax_raw < 0)
+                tax_raw = 0;
             tax_complete = Math.Round(tax_raw, MidpointRounding.AwayFromZero);
         }
     }

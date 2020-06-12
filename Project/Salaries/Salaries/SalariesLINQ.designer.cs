@@ -317,7 +317,7 @@ namespace Salaries
 		
 		private double _HCAsessed;
 		
-		private bool _WorksInLiveCity;
+		private bool _WorksNotInLiveCity;
 		
 		private double _TaxPercent;
 		
@@ -353,8 +353,8 @@ namespace Salaries
     partial void OnHCDeductedChanged();
     partial void OnHCAsessedChanging(double value);
     partial void OnHCAsessedChanged();
-    partial void OnWorksInLiveCityChanging(bool value);
-    partial void OnWorksInLiveCityChanged();
+    partial void OnWorksNotInLiveCityChanging(bool value);
+    partial void OnWorksNotInLiveCityChanged();
     partial void OnTaxPercentChanging(double value);
     partial void OnTaxPercentChanged();
     partial void OnTaxReliefChanging(bool value);
@@ -539,22 +539,22 @@ namespace Salaries
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_WorksInLiveCity", DbType="Bit NOT NULL")]
-		public bool WorksInLiveCity
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_WorksNotInLiveCity", DbType="Bit NOT NULL")]
+		public bool WorksNotInLiveCity
 		{
 			get
 			{
-				return this._WorksInLiveCity;
+				return this._WorksNotInLiveCity;
 			}
 			set
 			{
-				if ((this._WorksInLiveCity != value))
+				if ((this._WorksNotInLiveCity != value))
 				{
-					this.OnWorksInLiveCityChanging(value);
+					this.OnWorksNotInLiveCityChanging(value);
 					this.SendPropertyChanging();
-					this._WorksInLiveCity = value;
-					this.SendPropertyChanged("WorksInLiveCity");
-					this.OnWorksInLiveCityChanged();
+					this._WorksNotInLiveCity = value;
+					this.SendPropertyChanged("WorksNotInLiveCity");
+					this.OnWorksNotInLiveCityChanged();
 				}
 			}
 		}

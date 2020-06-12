@@ -68,7 +68,7 @@ namespace Salaries
                 ZUS = cont.ZUS,
                 HCDeducted = cont.hc_deducted,
                 HCAsessed = cont.hc_asessed,
-                WorksInLiveCity = TaO.otherCity,
+                WorksNotInLiveCity = TaO.otherCity,
                 TaxPercent = TaO.tax_precent,
                 TaxRelief = TaO.relief,
                 Tax = TaO.tax_complete,

@@ -21,7 +21,7 @@
       <Column Name="ZUS" Type="System.Double" DbType="Float NOT NULL" CanBeNull="false" />
       <Column Name="HCDeducted" Type="System.Double" DbType="Float NOT NULL" CanBeNull="false" />
       <Column Name="HCAsessed" Type="System.Double" DbType="Float NOT NULL" CanBeNull="false" />
-      <Column Name="WorksInLiveCity" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="WorksNotInLiveCity" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
       <Column Name="TaxPercent" Type="System.Double" DbType="Float NOT NULL" CanBeNull="false" />
       <Column Name="TaxRelief" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
       <Column Name="Tax" Type="System.Double" DbType="Float NOT NULL" CanBeNull="false" />

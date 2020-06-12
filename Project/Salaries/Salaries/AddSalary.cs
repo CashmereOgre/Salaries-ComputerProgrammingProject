@@ -29,19 +29,37 @@ namespace Salaries
 
         private void button1_Click(object sender, EventArgs e)
         {
-            double bas = double.Parse(base_salTB.Text);
-            int yrs = int.Parse(seniorTB.Text);
-            double bon = double.Parse(bonusTB.Text);
-            double tax = double.Parse(taxTB.Text);
-            bool rel = relief.Checked;
-            bool diffCity = anotherCity.Checked;
+            try
+            {
+                double bas = double.Parse(base_salTB.Text);
+                int yrs = int.Parse(seniorTB.Text);
+                double bon = double.Parse(bonusTB.Text);
+                double tax = double.Parse(taxTB.Text);
+                bool rel = relief.Checked;
+                bool diffCity = anotherCity.Checked;
 
-            bool saved = CalculationManager.calculateEverything(worker, bas, yrs, bon, tax, rel, diffCity);
+                if (bas < 0 || yrs < 0 || tax < 0)
+                    throw new ExceptionNegative("Input values can't be smaller than 0");
 
-            if (saved)
-                MessageBox.Show("Salary calculated and added successfully");
-            else
-                MessageBox.Show("Adding or calculating salary failed");
+                bool saved = CalculationManager.calculateEverything(worker, bas, yrs, bon, tax, rel, diffCity);
+
+                if (saved)
+                    MessageBox.Show("Salary calculated and added successfully");
+                else
+                    MessageBox.Show("Adding or calculating salary failed");
+            }
+            catch(System.FormatException)
+            {
+                MessageBox.Show("Bad format of input data");
+            }
+            catch(ExceptionNullValue)
+            {
+                MessageBox.Show("Base salary can't be equal to 0 ");
+            }
+            catch(ExceptionNegative exc)
+            {
+                MessageBox.Show(exc.Message);
+            }
         }
     }
 }

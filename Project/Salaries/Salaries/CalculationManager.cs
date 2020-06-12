@@ -10,6 +10,8 @@ namespace Salaries
     {
         public static bool calculateEverything(Worker worker, double bas, int yrs, double bon, double tax, bool rel, bool city)
         {
+            if (bas == 0)
+                throw new ExceptionNullValue();
             Salarycalc salaryCalc = new Salarycalc(bas, bon, yrs);
             salaryCalc.calc_brutto();
 

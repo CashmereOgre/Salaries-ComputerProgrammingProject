@@ -226,7 +226,8 @@
     <Compile Include="DisplayWorkers.Designer.cs">
       <DependentUpon>DisplayWorkers.cs</DependentUpon>
     </Compile>
-    <Compile Include="Employee.cs" />
+    <Compile Include="ExceptionNegative.cs" />
+    <Compile Include="ExceptionNullValue.cs" />
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>
