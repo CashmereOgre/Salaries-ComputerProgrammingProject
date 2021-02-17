@@ -1,7 +1,0 @@
-﻿  main.cpp
-c:\users\wikto\desktop\cp4\lab_01\rtti\rtti\main.cpp(48): warning C4584: „WriterWithHistory”: klasa bazowa „Describable” jest już klasą bazową „Writer”
-  c:\users\wikto\desktop\cp4\lab_01\rtti\rtti\main.cpp(24): note: zobacz deklarację „Describable”
-  c:\users\wikto\desktop\cp4\lab_01\rtti\rtti\main.cpp(33): note: zobacz deklarację „Writer”
-c:\users\wikto\desktop\cp4\lab_01\rtti\rtti\main.cpp(79): warning C4018: "<": niezgodność typu ze znakiem/bez znaku
-c:\users\wikto\desktop\cp4\lab_01\rtti\rtti\main.cpp(140): warning C4540: Operator dynamic_cast został użyty do konwertowania do niedostępnej lub niejednoznacznej podstawy; test czasu wykonywania nie powiedzie się ("WriterWithHistory *" na "Describable *")
-  RTTI.vcxproj -> C:\Users\wikto\Desktop\CP4\Lab_01\RTTI\Debug\RTTI.exe
