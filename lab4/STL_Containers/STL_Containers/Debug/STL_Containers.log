@@ -1,9 +1,0 @@
-﻿  main.cpp
-c:\users\wikto\desktop\programowanie\cp4\lab_04\stl_containers\stl_containers\main.cpp(16): warning C4018: "<": niezgodność typu ze znakiem/bez znaku
-c:\users\wikto\desktop\programowanie\cp4\lab_04\stl_containers\stl_containers\main.cpp(19): warning C4018: "<": niezgodność typu ze znakiem/bez znaku
-c:\users\wikto\desktop\programowanie\cp4\lab_04\stl_containers\stl_containers\main.cpp(59): warning C4018: "<": niezgodność typu ze znakiem/bez znaku
-c:\users\wikto\desktop\programowanie\cp4\lab_04\stl_containers\stl_containers\main.cpp(171): warning C4305: "argument": obcięcie z "double" do "float"
-c:\users\wikto\desktop\programowanie\cp4\lab_04\stl_containers\stl_containers\main.cpp(172): warning C4305: "argument": obcięcie z "double" do "float"
-c:\users\wikto\desktop\programowanie\cp4\lab_04\stl_containers\stl_containers\main.cpp(173): warning C4305: "argument": obcięcie z "double" do "float"
-c:\users\wikto\desktop\programowanie\cp4\lab_04\stl_containers\stl_containers\main.cpp(174): warning C4305: "argument": obcięcie z "double" do "float"
-  STL_Containers.vcxproj -> C:\Users\wikto\Desktop\Programowanie\CP4\Lab_04\STL_Containers\Debug\STL_Containers.exe
